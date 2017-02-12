@@ -10,3 +10,11 @@
 	<%= link_to "Edit Article", edit_article_path(@article) %>
 	<%= link_to "Delete Article", article_path(@article), method: :delete %>	
 </section>
+
+<h4>Comments:</h4>
+<section>
+	<%= render partial: 'comments/form' %>
+</section>
+<section>
+	<%= render partial: 'articles/comment', collection: @article.comments.reverse %>
+</section>
