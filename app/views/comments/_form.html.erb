@@ -2,7 +2,7 @@
 
 <%= form_for [@article, @comment] do |f| %>
   <p>
-    <%= f.label :body %><br/>
+    <%= f.label :body, "Add your comment here:" %><br/>
     <%= f.text_area :body %>
   </p>
   <p>

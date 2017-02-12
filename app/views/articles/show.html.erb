@@ -11,7 +11,7 @@
 	<%= link_to "Delete Article", article_path(@article), method: :delete %>	
 </section>
 
-<h4>Comments:</h4>
+<h4>Comments: <%= @article.comments.size %> so far!</h4>
 <section>
 	<%= render partial: 'comments/form' %>
 </section>
