@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   before_action :set_author, only: [:show, :edit, :update, :destroy]
-
+  before_filter :zero_authors_or_authenticated, only: [:new, :create]
 
   def index
     @authors = Author.all
@@ -55,7 +55,7 @@ class AuthorsController < ApplicationController
     end
   end
 
-  private
+  private # pull to helper?
 
     def set_author
       @author = Author.find(params[:id])
@@ -65,4 +65,12 @@ class AuthorsController < ApplicationController
     def author_params
       params.require(:author).permit(:username, :email, :password, :password_confirmation)
     end
+
+    def zero_authors_or_authenticated
+      unless Author.count == 0 || current_user
+        redirect_to articles_path
+        return false
+      end
+    end
+
 end
