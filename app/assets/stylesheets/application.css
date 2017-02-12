@@ -13,3 +13,85 @@
  *= require_tree .
  *= require_self
  */
+
+
+h1{
+	font-family: helvetica;
+	background-color: #92b2b1;
+	padding: 5px;
+}
+
+h2 {
+	font-family: helvetica;
+	background-color: #92b2b1;
+	padding: 5px;
+}
+
+.article_editing a {
+	font-size: .7em;
+}
+
+.article_body {
+	margin: 25px;
+	padding-left: 5px;
+	max-width: 400px;
+	min-height: 40px;
+	border-left: solid #92b2b1 6px;
+}
+
+h4 {
+	/*text-align: center;*/
+	font-family: helvetica;
+}
+
+.comment_body {
+	margin-left: 100px;
+	padding-left: 3px;
+	max-width: 250px;
+	font-size: 12px;
+	border-left: solid #92b2b1 4px;
+}
+
+.time_stamp {
+	margin-left: 150px;
+	font-size: 8px;
+}
+
+.form {
+	/*display: inline-block;*/
+	background-color: #92b2b1;
+	padding: 5px;
+}
+
+/*.actions {
+	color: black;
+	-webkit-border-radius: 5px;
+}*/
+
+a {
+	text-decoration: none;
+	color: black;
+	border-right: solid black 1px;
+	padding-right: 5px;
+}
+
+a:hover {
+	font-style: italic;
+}
+
+ul {
+	list-style: none;	
+}
+
+ul a {
+	border-right: none;	
+}
+
+ul a:hover {
+	font-style: normal;
+	font-weight: bold;
+}
+
+#new_article a{
+	border-right: none;
+}

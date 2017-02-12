@@ -1,13 +1,14 @@
-<section>
+<section class='form'>
 	<%= form_tag sessions_path, method: :post %>
   
 
-    <%= label_tag :email %>
-    <%= text_field_tag :email %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= label_tag :email %><br>
+    <%= text_field_tag :email %><br>
 
-    <%= submit_tag "Login" %>
+    <%= label_tag :password %><br>
+    <%= password_field_tag :password %>
+<br><br>
+    <p class='actions'><%= submit_tag "Login" %></p>
   
 	
 </section>
