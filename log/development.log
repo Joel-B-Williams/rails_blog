@@ -478,3 +478,40 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 80ms (Views: 67.8ms | ActiveRecord: 3.8ms)
 
 
+Started GET "/articles/2" for 127.0.0.1 at 2017-02-12 12:30:16 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (2.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  Rendered comments/_form.html.erb (4.4ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  Rendered collection of articles/_comment.html.erb [4 times] (3.8ms)
+  Rendered articles/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 63ms (Views: 55.9ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/articles/2/comments" for 127.0.0.1 at 2017-02-12 12:30:29 -0600
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NF/RVYGv7d/0NL9d8UQlOPWqAS1QBIRxsu8xnWXLUR8d7OJH/K9cH1/X7yOE8MvmlhajxiAcMjKYgHq10sFQ6w==", "comment"=>{"body"=>"First!!!11one"}, "commit"=>"Submit", "article_id"=>"2"}
+  [1m[35m (3.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("article_id", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["article_id", 2], ["body", "First!!!11one"], ["created_at", 2017-02-12 18:30:29 UTC], ["updated_at", 2017-02-12 18:30:29 UTC]]
+  [1m[35m (41.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 56ms (ActiveRecord: 46.5ms)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2017-02-12 12:30:29 -0600
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  Rendered comments/_form.html.erb (2.5ms)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = $1[0m  [["article_id", 2]]
+  Rendered collection of articles/_comment.html.erb [5 times] (2.8ms)
+  Rendered articles/show.html.erb within layouts/application (15.9ms)
+Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 2.0ms)
+
+
