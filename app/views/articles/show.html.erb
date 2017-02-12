@@ -6,10 +6,12 @@
 	<%= @article.body %>
 </section>
 
+<% if logged_in? %>
 <section class='article_editing'>
 	<%= link_to "Edit Article", edit_article_path(@article) %>
 	<%= link_to "Delete Article", article_path(@article), method: :delete %>	
 </section>
+<% end %>
 
 <h4>Comments: <%= @article.comments.size %> so far!</h4>
 <section>

@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
 	
-	def index
-		# @comments = Comment.where(article_id: params[:])
-	end
+	before_filter :require_login, except: [:create]
+	# def index
+	# 	# @comments = Comment.where(article_id: params[:])
+	# end
 	
-	def show
-	end
+	# def show
+	# end
 	
-	def new
-	end
+	# def new
+	# end
 	
 	def create 
 		@comment = Comment.new(comment_params)
@@ -21,12 +22,12 @@ class CommentsController < ApplicationController
   	params.require(:comment).permit(:body)
 	end
 	
-	def destroy
-	end
+	# def destroy
+	# end
 	
-	def edit
-	end
+	# def edit
+	# end
 	
-	def update
-	end
+	# def update
+	# end
 end

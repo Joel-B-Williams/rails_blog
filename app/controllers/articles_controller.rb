@@ -2,6 +2,8 @@ class ArticlesController < ApplicationController
 
 	include ArticlesHelper
 
+	before_filter :request_authenticity_tokens, except: [:index, :show]
+
 	def index
 		@articles = Article.all
 	end
