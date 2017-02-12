@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 		logout
-		redirect_to(:authors)
+		redirect_to(:articles)
 	end
 
 	def edit
@@ -27,5 +27,5 @@ class SessionsController < ApplicationController
 
 	def update
 	end 
-	
+
 end
