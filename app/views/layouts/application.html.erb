@@ -10,6 +10,12 @@
 
   <body>
   	<%= link_to "Home", articles_path %>
+    <% if logged_in? %>
+    <%= %>
+    <% else %>
+    <%= %>
+    <%= %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

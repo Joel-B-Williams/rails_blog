@@ -826,3 +826,78 @@ Processing by AuthorsController#create as HTML
 Completed 200 OK in 163ms (Views: 43.9ms | ActiveRecord: 2.2ms)
 
 
+Started POST "/authors" for 127.0.0.1 at 2017-02-12 13:31:27 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1OfttCqhYKo7rthS0nN74MoKGJkdYp87DSRk5YcmPIT9VN6mV6HRapBNiCynx5U+qba6cm16KXgnSy/NMCw9cA==", "author"=>{"email"=>"mail@mail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "authors" ("email", "crypted_password", "salt", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "mail@mail.com"], ["crypted_password", "$2a$10$sSFjE6idfA4eWzt51L2q3Oq6GKqVxcjMgiJOkvxqEdB0k6q0gMB1K"], ["salt", "cnYA1p8hpSYb5svz6j3x"], ["created_at", 2017-02-12 19:31:27 UTC], ["updated_at", 2017-02-12 19:31:27 UTC]]
+  [1m[35m (34.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/authors/2
+Completed 302 Found in 157ms (ActiveRecord: 35.4ms)
+
+
+Started GET "/authors/2" for 127.0.0.1 at 2017-02-12 13:31:27 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (14.4ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<Author:0x007fb540524ae8>):
+    2: 
+    3: <p>
+    4:   <strong>Username:</strong>
+    5:   <%= @author.username %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/authors/show.html.erb:5:in `_app_views_authors_show_html_erb__1899063971960665533_70208222460560'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (11.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.8ms)
+Started GET "/authors/1" for 127.0.0.1 at 2017-02-12 13:33:29 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 6.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<Author:0x007fb540b83bf0>):
+    2: 
+    3: <p>
+    4:   <strong>Username:</strong>
+    5:   <%= @author.username %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/authors/show.html.erb:5:in `_app_views_authors_show_html_erb__1899063971960665533_70208225808940'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (8.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (39.0ms)
+Started GET "/authors/1" for 127.0.0.1 at 2017-02-12 13:34:14 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 0.5ms)
+
+
