@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :authors
+  resources :sessions, only: [:new, :create, :destroy]
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
 end
