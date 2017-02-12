@@ -1,4 +1,4 @@
 <section>
-	<p><%= comment.body %></p>
+	<p class='comment_body'><%= comment.body %></p>
 	<p class='time_stamp'>- <%= distance_of_time_in_words(comment.created_at, Time.now) %> ago</p>
 </section>

@@ -515,3 +515,314 @@ Processing by ArticlesController#show as HTML
 Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 2.0ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5218249972321989435);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to SorceryCore (20170212190545)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (198.7ms)[0m  [1m[35mCREATE TABLE "authors" ("id" serial primary key, "email" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (72.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_authors_on_email" ON "authors"  ("email")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170212190545"]]
+  [1m[35m (37.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5218249972321989435)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: cleanup! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.reload! instead of cleanup + prepare) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:152)
+DEPRECATION WARNING: prepare! is deprecated and will be removed from Rails 5.1 (use Rails.application.reloader.prepare! instead) (called from serve at /usr/lib/ruby/vendor_ruby/spring/application.rb:153)
+Started GET "/articles" for 127.0.0.1 at 2017-02-12 13:13:51 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 440ms (Views: 411.1ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:13:58 -0600
+Processing by AuthorsController#new as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joelercoaster/rails/rails_blog/app/models/author.rb:4: syntax error, unexpected '\n', expecting =>):
+  
+app/models/author.rb:4: syntax error, unexpected '\n', expecting =>
+app/controllers/authors_controller.rb:17:in `new'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (9.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.1ms)
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:14:31 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (1.7ms)
+  Rendered authors/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 5.6ms)
+
+
+  
+SyntaxError (/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:25: syntax error, unexpected ':', expecting ')'
+...ut_buffer.append=( f.label="" :password="" %="" );@output_bu...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:25: syntax error, unexpected tOP_ASGN, expecting ')'
+...nd=( f.label="" :password="" %="" );@output_buffer.safe_appe...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:26: syntax error, unexpected ':', expecting ')'
+...ffer.append=( f.text_field="" :password="" %="" );@output_bu...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:26: syntax error, unexpected tOP_ASGN, expecting ')'
+...f.text_field="" :password="" %="" );@output_buffer.safe_appe...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:30: syntax error, unexpected ':', expecting ')'
+...ut_buffer.append=( f.label="" :password_confirmation="" %=""...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:30: syntax error, unexpected tOP_ASGN, expecting ')'
+..."" :password_confirmation="" %="" );@output_buffer.safe_appe...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:31: syntax error, unexpected ':', expecting ')'
+...ffer.append=( f.text_field="" :password_confirmation="" %=""...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:31: syntax error, unexpected tOP_ASGN, expecting ')'
+..."" :password_confirmation="" %="" );@output_buffer.safe_appe...
+...                               ^):
+  
+app/views/authors/_form.html.erb:25: syntax error, unexpected ':', expecting ')'
+app/views/authors/_form.html.erb:25: syntax error, unexpected tOP_ASGN, expecting ')'
+app/views/authors/_form.html.erb:26: syntax error, unexpected ':', expecting ')'
+app/views/authors/_form.html.erb:26: syntax error, unexpected tOP_ASGN, expecting ')'
+app/views/authors/_form.html.erb:30: syntax error, unexpected ':', expecting ')'
+app/views/authors/_form.html.erb:30: syntax error, unexpected tOP_ASGN, expecting ')'
+app/views/authors/_form.html.erb:31: syntax error, unexpected ':', expecting ')'
+app/views/authors/_form.html.erb:31: syntax error, unexpected tOP_ASGN, expecting ')'
+app/views/authors/new.html.erb:3:in `_app_views_authors_new_html_erb__1208434221264989919_20077140'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.2ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (47.5ms)
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:17:10 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (49.1ms)
+  Rendered authors/new.html.erb within layouts/application (51.2ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<Author:0x007fb540503640>):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :username %>
+    16:     <%= f.text_field :username %>
+    17:   </div>
+    18: 
+    19:   <div class="field">
+  
+app/views/authors/_form.html.erb:16:in `block in _app_views_authors__form_html_erb__4484220610822101667_70208222472780'
+app/views/authors/_form.html.erb:1:in `_app_views_authors__form_html_erb__4484220610822101667_70208222472780'
+app/views/authors/new.html.erb:3:in `_app_views_authors_new_html_erb__1208434221264989919_70208222400660'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (45.1ms)
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:17:58 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (10.0ms)
+  Rendered authors/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 52ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:21:27 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (5.1ms)
+  Rendered authors/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:21: syntax error, unexpected ':', expecting ')'
+...ut_buffer.append=( f.label="" :password="" %="" );@output_bu...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:21: syntax error, unexpected tOP_ASGN, expecting ')'
+...nd=( f.label="" :password="" %="" );@output_buffer.safe_appe...
+...                               ^
+/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:22: syntax error, unexpected tSTRING_BEG, expecting ')'
+...pend=( f.text_field :password="" %="" );@output_buffer.safe_...
+...                               ^):
+  
+app/views/authors/_form.html.erb:21: syntax error, unexpected ':', expecting ')'
+app/views/authors/_form.html.erb:21: syntax error, unexpected tOP_ASGN, expecting ')'
+app/views/authors/_form.html.erb:22: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/authors/new.html.erb:3:in `_app_views_authors_new_html_erb__1208434221264989919_70208222760780'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.9ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.7ms)
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:23:54 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (1.7ms)
+  Rendered authors/new.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joelercoaster/rails/rails_blog/app/views/authors/_form.html.erb:21: syntax error, unexpected ':', expecting ')'
+...ut_buffer.append=( f.label="" :password );@output_buffer.saf...
+...                               ^):
+  
+app/views/authors/_form.html.erb:21: syntax error, unexpected ':', expecting ')'
+app/views/authors/new.html.erb:3:in `_app_views_authors_new_html_erb__1208434221264989919_70208222172840'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (12.0ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.6ms)
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:24:11 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (5.4ms)
+  Rendered authors/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2017-02-12 13:24:35 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3pm5LmJDpoL46CPBzsLJaV/16TCyh895YI8rZnzuJiz3Koo8H0MXQlMLc7+7die3PElL28KfeTpK4GBOy+Qn2A==", "author"=>{"email"=>"asdf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (6.4ms)
+  Rendered authors/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 179ms (Views: 46.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2017-02-12 13:25:02 -0600
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (1.0ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  Rendered authors/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 42ms (Views: 33.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:25:11 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (6.5ms)
+  Rendered authors/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 82ms (Views: 43.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2017-02-12 13:25:13 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2efKeYTe3cSCTP+5+H1fXZVi0jBlkTx0xUtP1D8/76rwVPlr+d5sBCmvr8eNybGD9t5w2xWJijfvJAT8iDXuXg==", "author"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "authors" ("email", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["email", ""], ["created_at", 2017-02-12 19:25:13 UTC], ["updated_at", 2017-02-12 19:25:13 UTC]]
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 52ms (ActiveRecord: 35.2ms)
+
+
+Started GET "/authors/1" for 127.0.0.1 at 2017-02-12 13:25:13 -0600
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (20.5ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `username' for #<Author:0x007fb540bc4b78>):
+    2: 
+    3: <p>
+    4:   <strong>Username:</strong>
+    5:   <%= @author.username %>
+    6: </p>
+    7: 
+    8: <p>
+  
+app/views/authors/show.html.erb:5:in `_app_views_authors_show_html_erb__1899063971960665533_70208225590100'
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (14.1ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendering /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /var/lib/gems/2.3.0/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.8ms)
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:25:25 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (13.1ms)
+  Rendered authors/new.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2017-02-12 13:25:28 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vbs8yNmbwjDdACud8miTrzNSmTQcGrS1Y+CsHypHdfmUCA/apJtz8Hbje+OH3H1xUO4732wCAvZJj+c3nU10DQ==", "author"=>{"email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (8.0ms)
+  Rendered authors/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 163ms (Views: 39.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-02-12 13:25:39 -0600
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.9ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 77ms (Views: 59.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-02-12 13:26:51 -0600
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (14.0ms)
+  Rendered articles/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 49ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2017-02-12 13:26:56 -0600
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (190.3ms)
+  Rendered authors/new.html.erb within layouts/application (192.7ms)
+Completed 200 OK in 227ms (Views: 225.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2017-02-12 13:27:02 -0600
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fveiCWx2IfvDCKAF//Qom5/7z/1O/wSAn3cLtWV2rctXRJEbEXaQO2jr8HuKQMZF/EdtFj7nssO1GECd0nysPw==", "author"=>{"email"=>"asdaf", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create Author"}
+  [1m[35m (2.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (6.8ms)
+  Rendered authors/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 163ms (Views: 43.9ms | ActiveRecord: 2.2ms)
+
+
